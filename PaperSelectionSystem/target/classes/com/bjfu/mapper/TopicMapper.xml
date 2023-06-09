@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.mapper.TopicMapper">
+	<select id="selectTopicInfo" resultType="com.bjfu.pojo.TopicInfo">
+		select topic_id,topic,teacher_name,keyword,creation_time,student_num
+		from topic inner join teacher on topic.teacher_id=teacher.teacher_id
+		where course_id=#{course_id} and topic.teacher_id=#{teacher_id}
+	</select>
+	<insert id="insertTopic" parameterType="com.bjfu.po.Topic">
+		insert into topic (topic_id,course_id,teacher_id,topic,keyword,creation_time,student_num) values(#{topic_id},#{course_id},#{teacher_id},#{topic},#{keyword},#{creation_time},#{creation_time})
+	</insert>
+	<select id="selectTopicsByCourseId" resultType="com.bjfu.po.Topic">
+		select *
+		from topic
+		where course_id=#{course_id}
+	</select>
+	<select id="selectTopicsByStudentID" resultType="com.bjfu.po.Topic">
+		select stutopic.topic_id,course_id,teacher_id,topic,keyword,creation_time,student_num
+		from stutopic inner join student on stutopic.student_id=student.student_id inner join topic on stutopic.topic_id=topic.topic_id
+		where stutopic.student_id=#{student_id}
+	</select>
+</mapper>

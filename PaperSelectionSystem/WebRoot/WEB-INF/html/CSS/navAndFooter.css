@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+		margin: auto;
+		padding: 0 auto;
+	}
+	.nav{
+		margin: auto;
+		width: 1200px;
+		height: 200px;
+		background-image: url('../images/nav.jpg');
+	}
+	#nav_icon{
+		float: left;
+		width: 300px;
+		height: 200px;
+	}
+	#user_icon{
+		float: right;
+		margin-right: 50px;
+		margin-top: 120px;
+	}
+	.main{
+		width: 1200px;
+		text-align: center;
+		
+	}
+    .footer{
+		width: 1200px;
+		height: 120px;
+		text-align: center;
+		line-height: 120px;
+		color: #858585;
+		background-image: url('../images/footer.jpg');
+	}

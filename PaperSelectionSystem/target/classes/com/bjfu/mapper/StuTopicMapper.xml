@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.mapper.StuTopicMapper">
+	<select id="selectStuTopicInfo" parameterType="String" resultType="com.bjfu.pojo.StuTopicInfo">
+		select stutopic_id,stutopic.topic_id,topic,keyword,teacher_name
+		from stutopic,topic,teacher
+		where student_id=#{student_id} and stutopic.topic_id=topic.topic_id and teacher.teacher_id=topic.teacher_id
+	</select>
+</mapper>

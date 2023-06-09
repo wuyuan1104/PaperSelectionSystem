@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.mapper.SCMapper">
+	<select id="selectCoursesByStudentId" resultType="com.bjfu.po.Course">
+		select course.course_id,course.course_name,course.term,course.course_hour
+		from sc inner join course on sc.course_id=course.course_id
+		where student_id=#{student_id}
+	</select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.mapper.TeacherMapper">
+	<select id="selectTNameById" parameterType="String">
+		select teacher_name from teacher where teacher_id=#{teacher_id}
+	</select>
+	<select id="selectTeacherAll" resultType="com.bjfu.po.Teacher">
+		select * from teacher
+	</select>
+	<select id="selectTeacherById" resultType="com.bjfu.po.Teacher">
+		select * from teacher where teacher_id=#{teacher_id}
+	</select>
+	<select id="selectTeacherByUId" resultType="com.bjfu.po.Teacher">
+		select * from teacher where user_id=#{user_id}
+	</select>
+	<insert id="insertTeacher" parameterType="com.bjfu.po.Teacher">
+		insert into teacher (teacher_id,user_id,teacher_name,sex,title,phone) values(#{teacher_id},#{user_id},#{teacher_name},#{sex},#{title},#{phone})
+	</insert>
+</mapper>

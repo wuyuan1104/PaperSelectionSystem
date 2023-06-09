@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="CSS/navAndFooter.css">
+<title>课程管理</title>
+<style type="text/css">
+	.main{
+		height: 720px;
+	}
+
+	.nav_content{
+		float: left;
+	    width: 300px;
+	    height: 200px;
+    }
+	.nav_content a{
+		text-decoration: none;
+		display: inline-block;
+		width: 300px;
+		height: 50px;
+		font-size: 22px;
+		line-height: 50px;
+		background:#B8C2BB;
+		color: #000000;
+	}
+    .nav_content a:hover{
+		background:#6B726C;
+		color:#E5E9E5;
+	}
+	.title{
+		height: 35px; 
+	    width: 900px;
+		background-color:#F7F7F7;
+	}
+	.title a{
+		display: inline-block;
+		width: 120px;
+		height: 35px; 
+		line-height: 35px;
+		text-decoration: none;
+		color: #000000;
+		float: left;
+	}
+	.title p{
+		display: inline-block;
+		width: 30px;
+		height: 35px; 
+		float: left;
+		line-height: 35px;
+	}
+	.content{
+		width: 900px;
+		float: right;
+	}
+	.add{
+		width:900px;
+		height: 45px;
+	}
+	.add a{
+		text-decoration: none;
+		color: #FFFFFF;
+		background: #C54C4C;
+		width: 110px;
+		height: 35px;
+		line-height: 35px;
+		display: inline-block;
+		margin-top: 30px;
+		margin-left: 50px;
+		
+	}
+	.courseinfo{
+		width: 680px;
+		margin-top: 20px;
+	}
+	.courseinfo input{
+		height: 30px;
+		width: 310px;
+	}
+	.one_info{
+		border-left-style:solid;
+		border-left-width: 40px;
+		border-left-color: #6B726C;
+		background-color: #F7F7F7;
+	}
+	.one_info p{
+		display: inline-block;
+		height: 40px;
+		width: 320px;
+		line-height: 40px;
+	}
+	.teacherinfo{
+		margin-top: 20px;
+		border-left-style:solid;
+		border-left-width: 40px;
+		border-left-color:#6B726C;
+		background-color: #F7F7F7;
+	}
+	.teacherinfo p{
+		display: inline-block;
+		height: 40px;
+		width: 320px;
+		line-height: 40px;
+	}
+	.submit input{
+		color: #FFFFFF;
+		background: #C54C4C;
+		width: 110px;
+		height: 35px; 
+		margin-top: 30px;
+		margin-left: 50px;
+		margin-bottom: 20px;
+	}
+	</style>
+</head>
+
+<body>
+<div class="all">
+    <div class="nav">
+	<div id="nav_icon">
+	<img src="images/logo.png" alt="nav_icon" width="270px;" height="200px;">
+	</div>
+	<div id="user_icon">
+		<img src="images/user_icon.png" alt="user_icon"  width="35px;" height="35px;" >
+		<p>管理员用户</p>
+	</div>	
+	</div>
+<div class="main">
+	<div class="nav_content">		
+		<a href="#">课程管理</a>
+		<a href="#">教师管理</a>		
+	</div>
+	<div class="content">
+	<div class="title">
+	<a href="#">课程管理</a><p>>></p><a href="#">查看课程列表</a><p>>></p><a href="#">新增课程信息</a>
+	</div>
+       
+		<div class="courseinfo">
+			<form method="post" action="">
+			<div class="one_info">
+				<p>课程ID</p><input type="text" name="courseID">
+				<p>课程名</p><input type="text" name="courseName">
+				<p>开设学期</p><input type="text" name="term">
+				<p>总讲学时</p><input type="text" name="courseHour">
+			</div>
+			<div class="teacherinfo">
+				<p>教师身份</p><p>主讲教师</p>
+				<p>教师ID</p><input type="text" name="teachHour_main">
+				<p>授课学时</p><input type="text" name="teachHour_main">
+		    </div>
+			<div class="teacherinfo">
+				<p>教师身份</p><p>团队教师</p>
+				<p>教师ID</p><input type="text" name="teachHour_other">
+				<p>授课学时</p><input type="text" name="teachHour_other">
+		    </div>	
+	</div>
+			<div class="submit">
+		<input type="submit" value="提交">
+			</div>
+		</form>
+		<p style="color: #A52527;">授课学时不匹配！请重新提交！</p>
+	</div>
+</div>
+<div class="footer">
+	<p>@all rights deserved.</p>
+	</div>
+</div>
+</body>
+</html>

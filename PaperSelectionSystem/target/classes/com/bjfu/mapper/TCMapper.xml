@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.mapper.TCMapper">
+	<select id="selectTCsBycourseId" parameterType="String" resultType="com.bjfu.pojo.TcTeacher">
+		select tc.teacher_id,teacher_name,identify,teach_hour
+		from tc inner join teacher on tc.teacher_id=teacher.teacher_id 
+		where course_id=#{course_id}
+	</select>
+	<select id="selectTeacherCsByTId" resultType="com.bjfu.pojo.teacherCourse">
+		select tc_id,tc.course_id,course_name,term,identify,teach_hour,course_hour
+		from tc inner join course on tc.course_id=course.course_id
+		where tc.teacher_id=#{teacher_id}
+	</select>
+	<select id="selectTcByTcId" resultType="com.bjfu.po.TC">
+		select * from tc where tc_id=#{tc_id}
+	</select>
+	<select id="selectMainTeacherByCourseId" resultType="com.bjfu.po.Teacher">
+		select teacher.teacher_id,user_id,teacher_name,sex,title,phone
+		from tc inner join teacher on tc.teacher_id=teacher.teacher_id
+		where course_id=#{course_id} and identify='主讲'
+	</select>
+	<insert id="insertTc" parameterType="com.bjfu.po.TC">
+		insert into tc (tc_id,course_id,teacher_id,identify,teach_hour) values(#{tc_id},#{course_id},#{teacher_id},#{identify},#{teach_hour})
+	</insert>
+	<update id="updateTc" parameterType="com.bjfu.po.TC">
+		update tc set course_id=#{course_id},identify=#{identify},teach_hour=#{teach_hour} where tc_id=#{tc_id}
+	</update>
+	<select id="selectTc" resultType="com.bjfu.po.TC">
+		select *
+		from tc
+		where course_id=#{course_id} and teacher_id=#{teacher_id}
+	</select>
+</mapper>
+

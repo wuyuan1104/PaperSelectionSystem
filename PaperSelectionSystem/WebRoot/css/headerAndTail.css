@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+.nav{
+			height: 80px;
+			background: #638F6F;
+		}
+		.nav p{
+			display: inline-block;
+			height: 80px;
+			line-height: 80px;
+			float: right;
+			font-size: 29px;
+			color: #F0EFEF;
+			margin-right: 50px;
+		}
+		.nav img{
+			float: left;
+			margin-top: 40px;
+			margin-left: 20px;
+		}
+		.main{
+			height: 650px;
+		}
+		.footer {
+			height: 80px;
+			background-color: #638F6F;
+			text-align: center;
+		}
+		.footer p{
+			display: inline-block;
+			height: 80px;
+			line-height: 80px;
+			font-size: 18px;
+			color: #F0EFEF;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration:underline;
+		}
+		
